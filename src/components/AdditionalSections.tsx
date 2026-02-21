@@ -88,22 +88,48 @@ export const AudienceSection: React.FC = () => {
 };
 
 export const TestimonialsSection: React.FC = () => {
+    const testimonials = [
+        {
+            id: 1,
+            name: 'Suhas Joshi',
+            result: 'Lost 14kg',
+            quote: "I lost 14kg in 3 months. The coaching is amazing, and I don't feel hungry anymore. It feels like a complete lifestyle reset.",
+            image: "https://randomuser.me/api/portraits/men/32.jpg"
+        },
+        {
+            id: 2,
+            name: 'Priya Kadam',
+            result: 'Lost 10kg',
+            quote: "Dr. Omkar made me understand why my previous diets failed. The scientifically backed GLP-1 approach finally gave me results.",
+            image: "https://randomuser.me/api/portraits/women/44.jpg"
+        },
+        {
+            id: 3,
+            name: 'Rahul Deshmukh',
+            result: 'Lost 18kg',
+            quote: "Coach Niilesh's daily habits changed my life completely. I'm no longer struggling with cravings and have so much more energy.",
+            image: "https://randomuser.me/api/portraits/men/62.jpg"
+        }
+    ];
+
     return (
         <section id="testimonials" className="section section-light">
             <div className="container">
                 <h2 style={{ textAlign: 'center', fontSize: '3rem', marginBottom: '4rem', color: 'var(--color-brand-blue)', fontWeight: 900 }}>Success Stories</h2>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
-                    {[1, 2, 3].map((i) => (
-                        <div key={i} className="glass-card" style={{ padding: '2.5rem', background: '#FFFFFF' }}>
+                    {testimonials.map((t) => (
+                        <div key={t.id} className="glass-card" style={{ padding: '2.5rem', background: '#FFFFFF' }}>
                             <div style={{ display: 'flex', gap: '0.25rem', marginBottom: '1.5rem', color: '#F59E0B' }}>★★★★★</div>
                             <p style={{ fontStyle: 'italic', marginBottom: '2rem', color: 'var(--color-secondary)', fontSize: '1.1rem', lineHeight: 1.6 }}>
-                                "I lost 12kg in 3 months. The coaching is amazing, and I don't feel hungry anymore. It feels like a complete lifestyle reset."
+                                "{t.quote}"
                             </p>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', borderTop: '1px solid #F3F4F6', paddingTop: '1.5rem' }}>
-                                <div style={{ width: '3rem', height: '3rem', backgroundColor: '#F3F4F6', borderRadius: '50%' }}></div>
+                                <div style={{ width: '3rem', height: '3rem', borderRadius: '50%', overflow: 'hidden', backgroundColor: '#F3F4F6' }}>
+                                    <img src={t.image} alt={t.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                </div>
                                 <div>
-                                    <div style={{ fontWeight: 700, color: 'var(--color-brand-blue)' }}>Happy Member {i}</div>
-                                    <div style={{ fontSize: '0.9rem', color: '#F59E0B' }}>Lost 12kg</div>
+                                    <div style={{ fontWeight: 700, color: 'var(--color-brand-blue)' }}>{t.name}</div>
+                                    <div style={{ fontSize: '0.9rem', color: '#F59E0B' }}>{t.result}</div>
                                 </div>
                             </div>
                         </div>
