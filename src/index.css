@@ -1,0 +1,198 @@
+:root {
+  /* Light Wellness Palette */
+  --color-bg-light: #F9FAFB;
+  /* Warm Grey 50 - Main Background */
+  --color-bg-white: #FFFFFF;
+  /* White - Card Background */
+
+  --color-primary: #1F2937;
+  /* Gray 800 - Primary Text (Soft Dark) */
+  --color-secondary: #4B5563;
+  /* Gray 600 - Secondary Text */
+  --color-muted: #9CA3AF;
+  /* Gray 400 - Muted Text */
+
+  --color-brand-blue: #1E3A8A;
+  /* Deep Blue - Headings/Accents */
+  --color-brand-green: #10B981;
+  /* Emerald 500 - Success/Health */
+  --color-accent: #F97316;
+  /* Orange 500 - Warm Coral Accent (CTAs) */
+  --color-accent-hover: #EA580C;
+  /* Orange 600 */
+
+  /* Soft Pastel Gradients */
+  --gradient-hopeful: linear-gradient(135deg, #E0E7FF 0%, #F3E8FF 50%, #FFE4E6 100%);
+  /* Soft Blue -> Lavender -> Peach */
+  --gradient-card-glow: linear-gradient(180deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.4) 100%);
+  --gradient-primary-btn: linear-gradient(135deg, #F97316 0%, #FB923C 100%);
+  /* Orange Gradient */
+
+  /* Fonts */
+  --font-english: 'Inter', sans-serif;
+  --font-marathi: 'Mukta', sans-serif;
+
+  /* Spacing */
+  --spacing-container: 1rem;
+  --width-container: 1200px;
+
+  /* Light Theme Card */
+  --card-bg: rgba(255, 255, 255, 0.85);
+  /* More transparent for background to show */
+  --card-border: rgba(255, 255, 255, 0.6);
+  --card-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+  --card-radius: 1.5rem;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-english);
+  background-color: var(--color-bg-light);
+  /* Fallback */
+  /* Main Background gradient in body to avoid white flatness */
+  background-image:
+    radial-gradient(at 0% 0%, rgba(224, 231, 255, 0.3) 0%, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(255, 237, 213, 0.3) 0%, transparent 50%);
+  color: var(--color-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  line-height: 1.2;
+  color: var(--color-brand-blue);
+  /* Deep Blue for headings */
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.marathi {
+  font-family: var(--font-marathi);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* Utility Classes */
+.container {
+  max-width: var(--width-container);
+  margin: 0 auto;
+  padding: 0 var(--spacing-container);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2.5rem;
+  border-radius: 9999px;
+  /* Rounded pill shape for friendly feel */
+  font-weight: 700;
+  border: none;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  text-transform: capitalize;
+  /* Friendlier than uppercase */
+  font-size: 1.1rem;
+  letter-spacing: 0.01em;
+}
+
+.btn-primary {
+  background: var(--gradient-primary-btn);
+  color: #FFFFFF;
+  box-shadow: 0 4px 6px rgba(249, 115, 22, 0.25);
+  /* Orange shadow */
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px rgba(249, 115, 22, 0.3);
+  filter: brightness(1.05);
+}
+
+.section {
+  padding: 6rem 0;
+  position: relative;
+}
+
+/* Alternating Backgrounds */
+.section-light {
+  background: transparent;
+  /* Allows fixed Background.tsx to show through */
+}
+
+.section-white {
+  background: rgba(255, 255, 255, 0.4);
+  /* Much more transparent */
+  backdrop-filter: blur(8px);
+  /* Frosted glass effect */
+  -webkit-backdrop-filter: blur(8px);
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/* Wellness Card Utility */
+.glass-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--card-shadow);
+  border-radius: var(--card-radius);
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.glass-panel {
+  background: rgba(249, 250, 251, 0.7);
+  /* Very light grey for panels inside white cards */
+  border: 1px solid rgba(243, 244, 246, 0.8);
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+}
+
+/* Text Gradient Utility */
+.text-gradient {
+  background: var(--color-brand-blue);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-accent {
+  color: var(--color-accent);
+  /* Solid orange is easier to read on light bg */
+}
+
+/* Section specific overrides */
+.section-transparent {
+  background-color: transparent !important;
+}
+
+/* Custom Highlight */
+.highlight {
+  color: var(--color-accent);
+  font-weight: bold;
+}
