@@ -94,21 +94,21 @@ export const TestimonialsSection: React.FC = () => {
             name: 'Suhas Joshi',
             result: 'Lost 14kg',
             quote: "I lost 14kg in 3 months. The coaching is amazing, and I don't feel hungry anymore. It feels like a complete lifestyle reset.",
-            image: "https://randomuser.me/api/portraits/men/32.jpg"
+            image: "/testimonial_suhas.png"
         },
         {
             id: 2,
             name: 'Priya Kadam',
             result: 'Lost 10kg',
             quote: "Dr. Omkar made me understand why my previous diets failed. The scientifically backed GLP-1 approach finally gave me results.",
-            image: "https://randomuser.me/api/portraits/women/44.jpg"
+            image: "/testimonial_priya.png"
         },
         {
             id: 3,
             name: 'Rahul Deshmukh',
             result: 'Lost 18kg',
             quote: "Coach Niilesh's daily habits changed my life completely. I'm no longer struggling with cravings and have so much more energy.",
-            image: "https://randomuser.me/api/portraits/men/62.jpg"
+            image: "/testimonial_rahul.png"
         }
     ];
 
